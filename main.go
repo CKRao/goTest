@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
+	"goTestProject/handler"
 )
 
 func main() {
@@ -13,5 +14,16 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.Run("127.0.0.1:8888") // listen and serve on 0.0.0.0:8080
+	r.GET("/test", handler.Test)
+
+	// 此规则能够匹配/user/john这种格式，但不能匹配/user/ 或 /user这种格式
+	r.GET("/user/:name", handler.TestUrlParam)
+
+	// 匹配的url格式:  /welcome?firstname=Jane&lastname=Doe
+	r.GET("/welcome", handler.TestGet)
+
+	//测试POST请求
+	r.POST("/form_post", handler.TestPost)
+
+	r.Run(":6789") // listen and serve on 127.0.0.1:6789
 }

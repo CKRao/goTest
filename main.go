@@ -6,6 +6,8 @@ import (
 	"goTestProject/handler"
 )
 
+const PORT = ":6789"
+
 func main() {
 	logrus.Info("Start Server")
 	r := gin.Default()
@@ -25,5 +27,5 @@ func main() {
 	//测试POST请求
 	r.POST("/form_post", handler.TestPost)
 
-	r.Run(":6789") // listen and serve on 127.0.0.1:6789
+	r.Run(PORT) // listen and serve on 127.0.0.1:6789
 }

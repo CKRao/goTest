@@ -7,4 +7,7 @@ replace (
 	golang.org/x/sys => github.com/golang/sys v0.0.0-20190804053845-51ab0e2deafa
 )
 
-require github.com/sirupsen/logrus v1.4.2
+require (
+	github.com/CKRao/goTest v0.0.0-20190811075409-3985d01bb869 // indirect
+	github.com/sirupsen/logrus v1.4.2
+)

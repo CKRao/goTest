@@ -1,3 +1,5 @@
+github.com/CKRao/goTest v0.0.0-20190811075409-3985d01bb869 h1:IVDbt23szSVu6ZF0N0dmNTuweX1c5eOhJ3UAIPovQLA=
+github.com/CKRao/goTest v0.0.0-20190811075409-3985d01bb869/go.mod h1:0rEP2QCmzoaP9ATvQidcxCQC/hmH999UwGFomXDXy5k=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/golang/sys v0.0.0-20190804053845-51ab0e2deafa h1:Yz4Qk0OZPnf7umtIiZ0O5SFclHwPbKqip54ZLGM39uE=
 github.com/golang/sys v0.0.0-20190804053845-51ab0e2deafa/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=

@@ -16,6 +16,14 @@ func main() {
 			"message": "pong",
 		})
 	})
+	//初始化路由
+	initRouter(r)
+
+	r.Run(PORT) // listen and serve on 127.0.0.1:6789
+}
+
+//初始化路由
+func initRouter(r *gin.Engine) {
 	r.GET("/test", handler.Test)
 
 	r.GET("/testReflect", handler.TestReflect)
@@ -28,6 +36,4 @@ func main() {
 
 	//测试POST请求
 	r.POST("/form_post", handler.TestPost)
-
-	r.Run(PORT) // listen and serve on 127.0.0.1:6789
 }

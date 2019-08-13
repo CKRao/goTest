@@ -18,6 +18,8 @@ func main() {
 	})
 	r.GET("/test", handler.Test)
 
+	r.GET("/testReflect", handler.TestReflect)
+
 	// 此规则能够匹配/user/john这种格式，但不能匹配/user/ 或 /user这种格式
 	r.GET("/user/:name", handler.TestUrlParam)
 

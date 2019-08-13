@@ -3,6 +3,7 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"reflect"
 )
 
 func Test(c *gin.Context) {
@@ -34,8 +35,21 @@ func TestPost(c *gin.Context) {
 	nick := c.DefaultPostForm("nick", "anonymous") // 此方法可以设置默认值
 
 	c.JSON(200, gin.H{
-		"status":  "posted",
+		"method":  http.MethodPost,
+		"status":  http.StatusOK,
 		"message": message,
 		"nick":    nick,
+	})
+}
+
+func TestReflect(c *gin.Context) {
+	val := 3.1
+	v := reflect.ValueOf(val)
+
+	c.JSON(200, gin.H{
+		"type":    v.Type().String(),
+		"kind":    v.Kind(),
+		"value":   v.Float(),
+		"isFloat": v.Kind() == reflect.Float64,
 	})
 }

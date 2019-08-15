@@ -25,6 +25,12 @@ func main() {
 
 //初始化路由
 func initRouter(r *gin.Engine) {
+
+	r.GET("/", func(c *gin.Context) {
+		c.Request.URL.Path = "/file"
+		r.HandleContext(c)
+	})
+
 	r.GET("/test", handler.Test)
 
 	r.GET("/testReflect", handler.TestReflect)
@@ -39,10 +45,10 @@ func initRouter(r *gin.Engine) {
 	r.POST("/form_post", handler.TestPost)
 
 	//静态资源路径
-	r.Static("/assets", "/home/clarkrao/图片")
+	r.Static("/assets", "/opt")
 
 	//文件系统
-	r.StaticFS("/file", http.Dir("/home/clarkrao/ssFile/test"))
+	r.StaticFS("/file", http.Dir("/opt/download"))
 
 	//图标
 	r.StaticFile("/favicon.ico", "./favicon.ico")

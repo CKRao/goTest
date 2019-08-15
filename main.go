@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"goTestProject/handler"
+	"net/http"
 )
 
 const PORT = ":6789"
@@ -36,4 +37,13 @@ func initRouter(r *gin.Engine) {
 
 	//测试POST请求
 	r.POST("/form_post", handler.TestPost)
+
+	//静态资源路径
+	r.Static("/assets", "/home/clarkrao/图片")
+
+	//文件系统
+	r.StaticFS("/file", http.Dir("/home/clarkrao/ssFile/test"))
+
+	//图标
+	r.StaticFile("/favicon.ico", "./favicon.ico")
 }
